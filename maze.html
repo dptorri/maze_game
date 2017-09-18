@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maze</title>
+</head>
+<style>
+.board {
+    border-top: 100px;
+    position: fixed;
+    height: 600px;
+    width: 600px;
+    background-color: grey;
+}
+.start-button {
+    border-top: 100px;
+    top:0;
+    left: 0;
+    position: absolute;
+    background-color: green;
+    width: 150px;
+}
+.finish-button {
+    bottom:0;
+    left: 0;
+    position: absolute;
+    background-color: green;
+    width: 150px;
+}
+.left-wall{
+    position: absolute;
+    top: 50px;
+    left: 0;    
+    background-color: brown;
+    width: 250px;
+    height: 500px;
+}
+.right-wall{
+    position: absolute;
+    right: 0;    
+    background-color: brown;
+    width: 250px;
+    height: 500px;
+}
+</style>
+<script>
+    function wait(){
+        document.getElementById("welcome").innerHTML = "The game has not started, click start if you dare!"
+    }
+function start_game(){   
+    document.getElementById("welcome").innerHTML = "Game on!"
+} 
+function g_over(){
+    document.getElementById("welcome").innerHTML = "You lost sucker!"
+}
+function g_win(){
+    document.getElementById("welcome").innerHTML = "We have a winner!!"
+}
+
+</script>
+
+<body onload()>
+    <h3 id="welcome">Welcome to the maze!</h3>
+<div class="board">
+    <button class="start-button" onclick="start_game(this)">Start</button>
+    <div onmouseover="g_over(this)" class="left-wall">avoid this wall</div>
+    <div onmouseover="g_over(this)" class="right-wall">and this one too!</div>
+    <button class="finish-button" onclick="g_win(this)">Finish</button>
+</div>
+    
+
+
+</body>
+</html>
